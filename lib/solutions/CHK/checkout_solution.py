@@ -10,6 +10,9 @@ prices={"A":50, "B":30, "C":20, "D":15, "E":40}
 offers={"AAA": 130,"AAAAA":200, "BB": 45, "EEB":80}
 
 def backtracking(idx, part_price, missing):
+    global prices
+    global offers
+    global min_price
     if missing.keys()==[]:
         if min_price>part_price: min_price=part_price
         return
@@ -31,31 +34,35 @@ def backtracking(idx, part_price, missing):
 
 
 
-    if not set(buy.keys()) <= set(prices.keys()): return -1
-    price=0
-    for key, element in buy.items():
-        price_item=0
-        if key in offers:
-            offer=offers[key]
-            while element>=offer[0]:
-                element-=offer[0]
-                price_item+=offer[1]
-        price_item+=element*prices[key]
-        price+=price_item
-    print(price)
-    return price
+    
+  #  price=0
+   # for key, element in buy.items():
+  #      price_item=0
+   #     if key in offers:
+   #         offer=offers[key]
+  #          while element>=offer[0]:
+  #              element-=offer[0]
+  #              price_item+=offer[1]
+  #      price_item+=element*prices[key]
+  #      price+=price_item
+  #  print(price)
+  #  return price
 
 
 
 
 def checkout(skus):
+    global prices
+    global offers
+    global min_price
     buy=Counter(skus)
-
-    backtracking(0, 0, buy)
+    if not set(buy.keys()) <= set(prices.keys()): return -1
+    #backtracking(0, 0, buy)
     return min_price
 
 
 
 assert checkout("AAA")==130
+
 
 
