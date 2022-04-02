@@ -7,4 +7,3 @@ class TestSum():
         assert checkout_solution.compute("AAA") == 180
         assert checkout_solution.compute("BDBZ") == -1
         assert checkout_solution.compute("BDB") == 60
-

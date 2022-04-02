@@ -15,17 +15,8 @@ def checkout(skus):
             while element>=offer[0]:
                 element-=offer[0]
                 price_item+=offer[1]
-            price_item+=element*prices[key]
-            price+=price_item
+        price_item+=element*prices[key]
+        price+=price_item
+    print(price)
     return price
-
-
-assert checkout("AAAAAv") == -1
-assert checkout("A") == 50
-assert checkout("B") == 30
-assert checkout("AAA") == 180
-assert checkout("BDBZ") == -1
-assert checkout("BDB") == 60
-
-
 
