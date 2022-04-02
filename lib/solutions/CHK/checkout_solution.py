@@ -48,17 +48,5 @@ def checkout(skus):
     return min_price
 
 
-assert checkout("AAAAAA")==250
-assert checkout("AAAAA")==200
-assert checkout("AA")==100
-assert checkout("BB")==45
-assert checkout("B")==30
-assert checkout("bBB")==-1
-assert checkout("BBBBB")==120
-assert checkout("EEB")==80
-assert checkout("EE")==80
-assert checkout("BEBE")==110
-assert checkout("HHHHHHHHHHH")==80
-assert checkout("HHKHHHKHHHHHH")==230
-assert checkout("RRRQQQ")==210
+
 #assert checkout("LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRSMJCWHKKEEBUUEOZXPYAVFDE")==1880
