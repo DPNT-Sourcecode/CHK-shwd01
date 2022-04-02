@@ -57,4 +57,3 @@ def checkout(skus):
     return min_price
 
 assert checkout("SST")==45
-
