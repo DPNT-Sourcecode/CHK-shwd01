@@ -49,4 +49,3 @@ def checkout(skus):
 
 assert checkout("FF")==20
 assert checkout("FFF")==20
-
