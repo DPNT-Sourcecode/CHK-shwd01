@@ -33,7 +33,7 @@ from runner.user_input_action import get_user_input
          * After the action feedback is presented, the execution will stop.
  
     +------+-----------------------------------------------------------------------+
-    | Step | The usual workflow                                                    |
+    | Step | The usual workflow                      pause                              |
     +------+-----------------------------------------------------------------------+
     |  1.  | Run this file.                                                        |
     |  2.  | Start a challenge by typing "start".                                  |
@@ -71,3 +71,4 @@ ChallengeSession\
     .with_config(Utils.get_config())\
     .with_action_provider(lambda: get_user_input(sys.argv[1:]))\
     .start()
+
