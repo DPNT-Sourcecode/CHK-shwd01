@@ -74,11 +74,3 @@ def checkout(skus):
     
     backtracking(0, 0, buy)
     return min_price+price_group+buff_price
-
-assert checkout("SST")==45
-assert checkout("SXT")==45
-assert checkout("XXX")==45
-assert checkout("XXT")==45
-assert checkout("XXTX")==45+17
-
-assert checkout("XXTXAAA")==45+17+130
