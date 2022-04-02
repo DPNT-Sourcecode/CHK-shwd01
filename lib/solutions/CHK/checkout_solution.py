@@ -21,11 +21,11 @@ def backtracking(idx, part_price, missing):
         if min_price>part_price: min_price=part_price
         return
 
-    offered=offers.keys()[idx]
+    offered=list(offers.keys())[idx]
     tgt_price=offers[offered]
     backtracking(idx+1, part_price, missing)
     #we only apply the offer if it makes sense
-    if set(Counter(offered)).intersection(set(missing.keys())):
+    if set(Counter(offered)).intersection(set(list(missing.keys()))):
         part_price+=tgt_price
         for key, element in Counter(offered):
             #if key in m 
@@ -33,12 +33,10 @@ def backtracking(idx, part_price, missing):
     return
 
 def checkout(skus):
-    global prices
-    global offers
     global min_price
     buy=Counter(skus)
     if not set(buy.keys()) <= set(prices.keys()): return -1
-    #backtracking(0, 0, buy)
+    backtracking(0, 0, buy)
     return min_price
 
 
@@ -46,7 +44,4 @@ def checkout(skus):
 
 
 
-#assert checkout("AAA")==130
-
-
-
+assert checkout("AAA")==130
