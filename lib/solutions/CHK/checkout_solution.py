@@ -76,9 +76,11 @@ def checkout(skus):
                 buff+=aux_buff
     
     backtracking(0, 0, buy)
-    print(min_price)
     print(price_group)
     print(buff_price)
     return min_price+price_group+buff_price
 
 assert checkout("SST")==45
+assert checkout("SXT")==45
+assert checkout("XXX")==45
+assert checkout("XXT")==45
