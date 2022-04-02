@@ -51,11 +51,12 @@ assert checkout("AAA")==130
 assert checkout("AAAAAA")==250
 assert checkout("AAAAA")==200
 assert checkout("AA")==100
-
-
 assert checkout("BB")==45
 assert checkout("B")==30
 assert checkout("bBB")==-1
-print('debug')
 assert checkout("BBBBB")==120
+assert checkout("EEB")==80
+
+assert checkout("EE")==80
+assert checkout("BEBE")==110
 
