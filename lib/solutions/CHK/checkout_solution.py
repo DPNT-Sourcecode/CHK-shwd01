@@ -58,17 +58,14 @@ def checkout(skus):
     buff=0
     buff_price=0
     price_group=0
-    print('heii')
     for element in letters:
         aux_buff=0
         if element in buy:
-            print(element)
             aux_buff=buy[element]
             del buy[element]
-            print(element)
             if aux_buff+buff>=3:
                 buff+=aux_buff
-                price_group+=45*(buff//2)
+                price_group+=45*(buff//3)
                 buff = buff%3
                 buff_price=buff*prices[element]
             else:
@@ -76,11 +73,12 @@ def checkout(skus):
                 buff+=aux_buff
     
     backtracking(0, 0, buy)
-    print(price_group)
-    print(buff_price)
     return min_price+price_group+buff_price
 
 assert checkout("SST")==45
 assert checkout("SXT")==45
 assert checkout("XXX")==45
 assert checkout("XXT")==45
+assert checkout("XXTX")==45+17
+
+assert checkout("XXTXAAA")==45+17+130
