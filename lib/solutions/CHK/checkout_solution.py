@@ -56,10 +56,8 @@ assert checkout("B")==30
 assert checkout("bBB")==-1
 assert checkout("BBBBB")==120
 assert checkout("EEB")==80
-
 assert checkout("EE")==80
 assert checkout("BEBE")==110
-
 assert checkout("HHHHHHHHHHH")==80
-
 assert checkout("HHKHHHKHHHHHH")==230
+assert checkout("RRRQQQ")==210
