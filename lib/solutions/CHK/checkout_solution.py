@@ -1,27 +1,24 @@
+from asyncio.windows_events import INFINITE
 from collections import Counter
 
 # noinspection PyUnusedLocal
 # skus = unicode string
 
+min_price=INF
 
-+------+-------+------------------------+
-| Item | Price | Special offers         |
-+------+-------+------------------------+
-| A    | 50    | 3A for 130, 5A for 200 |
-| B    | 30    | 2B for 45              |
-| C    | 20    |                        |
-| D    | 15    |                        |
-| E    | 40    | 2E get one B free      |
-+------+-------+------------------------+
-
-
+def backtracking(idx, offers, prices, part_price, missing):
 
 
 
 def checkout(skus):
     buy=Counter(skus)
     prices={"A":50, "B":30, "C":20, "D":15, "E":40}
-    offers={"A"
+    offers={"AAA": 130,"AAAAA":200, "BB": 45, "EEB":80}
+    backtracking(0, offers, prices, part_price, missing)
+    return min_price
+
+
+
 
 
 
@@ -41,4 +38,5 @@ def checkout(skus):
     print(price)
     return price
 
+assert checkout("AAA")==130
 
