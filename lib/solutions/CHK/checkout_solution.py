@@ -1,4 +1,5 @@
 from collections import Counter
+from itertools import combinations_with_replacement
 
 # noinspection PyUnusedLocal
 # skus = unicode string
@@ -8,14 +9,11 @@ prices={"A":50, "B":30, "C":20, "D":15, "E":40, "F":10, "G":20, "H":10, "I":35,
  "J":60, "K": 70, "L":90, "M":15, "N":40, "O":10, "P":50, "Q":30, "R":50, "S":20, "T":20, "U":40, "V":50, "W":20, "X":17, "Y":20, "Z":21}
 offers={"AAA": 130,"AAAAA":200, "BB": 45, "EEB":80, "FFF":20, "HHHHH":45, "HHHHHHHHHH":80, "KK":120, "NNNM":120, "PPPPP":200, "QQQ":80, "RRRQ":150, "UUUU":120, "VV":90, "VVV":130}
 
-
 letters=["S", "T", "X", "Y", "Z"]
 
-for letter_1 in letters:
-    for letter_2 in letters:
-        for letter_3 in letters:
-            offers[letter_1+letter_2+letter_3]=45
-
+l = list(combinations_with_replacement(letters, 3))
+for element in l:
+    offers[element[0]+element[1]+element[2]]=45
 
 
 def backtracking(idx, part_price, missing_aux):
@@ -57,4 +55,6 @@ def checkout(skus):
     if not set(buy.keys()) <= set(prices.keys()): return -1
     backtracking(0, 0, buy)
     return min_price
+
+assert checkout("SST")==45
 
