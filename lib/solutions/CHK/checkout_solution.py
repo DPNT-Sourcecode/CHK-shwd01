@@ -14,14 +14,12 @@ def backtracking(idx, part_price, missing_aux):
     missing=missing_aux.copy()
     if missing.keys()==[]:
         if min_price>part_price: min_price=part_price
-        print(min_price)
         return
 
     if idx==len(offers):
         for key, element in missing.items():
             if element>0: part_price+=element*prices[key]    
         if min_price>part_price: min_price=part_price
-        print(min_price)
         return
 
     offered=list(offers.keys())[idx]
@@ -30,9 +28,7 @@ def backtracking(idx, part_price, missing_aux):
     backtracking(idx+1, part_price, missing.copy())
     
 
-    if set(Counter(offered)).intersection(set(list(missing.keys()))):
-        print(offered)
-        print(missing)
+    while set(Counter(offered)).intersection(set(list(missing.keys()))):
         part_price+=tgt_price
         for key, element in Counter(offered).items():
             if key in missing:
@@ -62,3 +58,4 @@ assert checkout("B")==30
 assert checkout("bBB")==-1
 print('debug')
 assert checkout("BBBBB")==120
+
