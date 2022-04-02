@@ -1,6 +1,10 @@
-from lib.solutions.SUM import sum_solution
+from lib.solutions.CHK import checkout_solution
 class TestSum():
     def test_sum(self):
-        assert sum_solution.compute(1, 2) == 3
-        assert sum_solution.compute(3, 2) == 5
-        assert sum_solution.compute(3, 1) == 4
+        assert checkout_solution("AAAAAv") == -1
+        assert checkout_solution.compute("A") == 50
+        assert checkout_solution.compute("B") == 30
+        assert checkout_solution.compute("AAA") == 180
+        assert checkout_solution.compute("BDBZ") == -1
+        assert checkout_solution.compute("BDB") == 60
+
