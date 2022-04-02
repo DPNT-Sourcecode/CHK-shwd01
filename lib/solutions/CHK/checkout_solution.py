@@ -50,9 +50,3 @@ def checkout(skus):
     print(min_price)
     return min_price
 
-
-assert checkout("HHHHHHHHH")==85
-
-
-
-#assert checkout("LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRSMJCWHKKEEBUUEOZXPYAVFDE")==1880
