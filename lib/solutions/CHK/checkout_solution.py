@@ -1,11 +1,9 @@
-from asyncio.windows_events import INFINITE
 from collections import Counter
-from re import M
 
 # noinspection PyUnusedLocal
 # skus = unicode string
 
-min_price=INF
+min_price= float("inf")
 prices={"A":50, "B":30, "C":20, "D":15, "E":40}
 offers={"AAA": 130,"AAAAA":200, "BB": 45, "EEB":80}
 
@@ -31,25 +29,8 @@ def backtracking(idx, part_price, missing):
         part_price+=tgt_price
         for key, element in Counter(offered):
             #if key in m 
-
-
-
-    
-  #  price=0
-   # for key, element in buy.items():
-  #      price_item=0
-   #     if key in offers:
-   #         offer=offers[key]
-  #          while element>=offer[0]:
-  #              element-=offer[0]
-  #              price_item+=offer[1]
-  #      price_item+=element*prices[key]
-  #      price+=price_item
-  #  print(price)
-  #  return price
-
-
-
+            print('jei')
+    return
 
 def checkout(skus):
     global prices
@@ -62,7 +43,10 @@ def checkout(skus):
 
 
 
-assert checkout("AAA")==130
+
+
+
+#assert checkout("AAA")==130
 
 
 
